@@ -1,0 +1,89 @@
+.contact-page {
+    padding-top: 80px!important;
+    @include breakpoint (desktop) {
+       padding-top: 70px!important;
+    }
+    @include media-breakpoint-only(lg) {
+        padding-top: 60px!important;
+    }
+    @include media-breakpoint-only(md) {
+        padding-top: 50px!important;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-top: 40px!important;
+    }
+    .contact-content {
+        text-align: center;
+        padding-top: 45px;
+        @include media-breakpoint-down(sm) {
+            padding-top: 0px;
+            margin-bottom: 40px;
+        }
+        h2 {
+            @include heading-font;
+            margin-bottom: 20px;
+        }
+        .phone, .email {
+            margin-bottom: 15px;
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include subheading-font;
+                color: rgb(223, 57, 95);
+                margin-left: auto;
+                margin-right: auto;
+                i {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 2.4em;
+                    min-width: 2.4em;
+                    height: 2.4em;
+                    text-align: center;
+                    color: #000;
+                    border-radius: 50%;
+                    border: 1px solid #000;
+                    font-size: 18px;
+                    margin-right: 10px;
+                    @include animate-fade;
+                }
+                &:hover {
+                    i {
+                        background-color: #c6c6c6;
+                        border-color: #c6c6c6;
+                    }
+                }
+            }
+        }
+        .email {
+            a {
+                color: #000;
+            }
+        }
+    }
+}
+
+// validate
+.wpcf7-not-valid-tip {
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.wpcf7-not-valid {
+    border-color:red!important;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output {
+    text-align: center;
+    padding:0px;
+    margin:0px;
+    color:red;
+    border:none;
+}
+
+#tooltip-modal {
+    .modal-body {
+        padding:35px;
+    }
+}

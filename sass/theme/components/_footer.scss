@@ -1,0 +1,152 @@
+/*===============================
+=           Footer            =
+===============================*/
+#page-footer {
+    background-color: #000;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+    h3 {
+        font-family: $libre-bold;
+        font-size: 13px;
+        line-height: 1.2;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    .footer-phone {
+        display: block;
+        font-size: 25.6px;
+        line-height: 1.5;
+        font-family: $pt-reg;
+        margin-bottom: 30px;
+        a {
+            color: #fff;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+    .footer-socials {
+        text-align: center;
+        margin-bottom: 30px;
+        li {
+            display: inline-block;
+            margin-left: 1px;
+            margin-right: 1px;
+            a {
+                i {
+                    color: #fff;
+                    font-size: 16px;
+                    width: 38px;
+                    height: 38px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    @include animate-fade;
+                    border: 1px solid transparent;
+                    &.fa-facebook-f {
+                        background-color: #3b5998;
+                        border-color: #3b5998;
+                    }
+                    &.fa-twitter {
+                        background-color: #00aced;
+                        border-color: #00aced;
+                    }   
+                    &.fa-yelp {
+                        background-color: #c41200;
+                        border-color: #c41200;
+                    }
+                    &.fa-youtube {
+                        background-color: #b00;
+                        border-color: #b00;
+                    }
+                    &.fa-instagram {
+                        background-color: #333;
+                        border-color: #333;
+                    }
+                    &.fa-envelope {
+                        background-color: #a4a4a4;
+                        border-color: #a4a4a4;
+                    }
+                }
+                &:hover {
+                    i {
+                        background-color: transparent!important;
+                        &.fa-facebook-f {
+                            color: #3b5998;
+                        }
+                        &.fa-twitter {
+                            color: #00aced;
+                        }   
+                        &.fa-yelp {
+                            color: #c41200; 
+                        }
+                        &.fa-youtube {
+                            color: #b00;
+                        }
+                        &.fa-instagram {
+                            color: #333;
+                        }
+                        &.fa-envelope {
+                            color: #a4a4a4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer-certificates {
+        margin-top: 30px;
+        ul {
+            li {
+                display: inline-block;
+            }
+        }
+    }
+    .cities-list {
+        margin-top: 30px;
+        ul {
+            li {
+                padding: 0 6px;
+                margin-top: 10px;
+                display: inline-block;
+                a {
+                    font-family: $pt-bold;
+                    font-size: 16px;
+                    line-height: 1.2;
+                    text-transform: uppercase;
+                    color: #fff;
+                    @include media-breakpoint-only(lg) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-only(md) {
+                        font-size: 14px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font-size: 13px;
+                    }
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+    }
+    .copy-bar {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        small {
+            font-family: $pt-reg;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #eaeaea;
+        }
+    }
+}
+
+/*=======End of Footer ========*/
+
+

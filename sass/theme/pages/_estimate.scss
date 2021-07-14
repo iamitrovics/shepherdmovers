@@ -1,0 +1,80 @@
+#free-estimate {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    @include breakpoint (desktop) {
+       padding-bottom: 70px;
+    }
+    @include media-breakpoint-only(lg) {
+        padding-bottom: 60px;
+    }
+    @include media-breakpoint-only(md) {
+        padding-bottom: 50px;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 40px;
+    }
+    .fit-wrap {
+        h4 {
+            text-align: center;
+        }
+    }
+    .quote-form {
+        border:0;
+        border-radius: 0;
+        padding: 0;
+        max-width: 100%;
+        &-in {
+            padding: 0;
+            background-color: #fff;
+            h2 {
+                color: #000;
+            }
+        }
+        form {
+            input[type=text], input[type=number], input[type=email], input[type=tel], textarea, .bootstrap-select .btn {
+                border: 1px solid #000;
+            }
+            .bootstrap-select .dropdown-menu {
+                min-width: 100%!important;
+                z-index: 9998!important;
+            }
+            label {
+                color: #000;
+            }
+            .control__indicator {
+                border: 1px solid #000!important;
+            }
+            .zebra_tooltips_below {
+                &:hover {
+                    color: #000;
+                }
+            }
+            input[type=submit] {
+                border-color: #000!important;
+                &:hover {
+                    background-color: #000;
+                }
+            }
+        }
+    }
+    .free-estimate-body {
+        margin-top: 40px;
+        padding-top: 40px;
+        border-top: 1px solid #eaeaea;
+       
+        h2 {
+            @include heading-font;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+}
+
+.quote-intro {
+    h4 {
+        text-align: center;
+        font-family: $font-heading;
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+}
