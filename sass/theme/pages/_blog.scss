@@ -395,6 +395,18 @@
         @include media-breakpoint-down(sm) {
             margin-bottom: 30px;
         }
+
+        #free-estimate {
+            .quote-intro {
+                border: 8px solid #000;
+                padding:30px;
+                border-radius: 9px;
+                h4 {
+                    font-size: 32px;
+                }
+            }
+        }
+
         .blog-photo {
             margin-bottom: 20px;
             img {
@@ -636,6 +648,42 @@
                     }
                 }
             }
+        }
+    }
+}
+
+// CTRA
+.quote-cta--single {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:$black;
+    padding:30px;
+    border-radius: 12px;
+    margin-top: 20px;
+    @include media-breakpoint-down(md) {
+        display: block;
+        padding:30px;
+        text-align: center;
+    }
+    span.title {
+        display: block;
+        font-size: 32px;
+        color:$white;
+        margin-right: 30px;
+        line-height: 1.2;
+        @include media-breakpoint-down(md) {
+            font-size: 28px;
+            margin-right: 0px;
+            margin-bottom: 15px;
+        }
+    }
+    a.btn-cta {
+        @include white-btn;
+        width: 230px;
+        @include media-breakpoint-down(md) {
+            margin:0px auto;
         }
     }
 }

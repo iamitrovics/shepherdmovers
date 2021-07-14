@@ -91,6 +91,14 @@ $container = get_theme_mod( 'understrap_container_type' );
                                             <?php the_sub_field('embedded_code'); ?>
                                         </div>
 
+                                    <?php elseif( get_row_layout() == 'quote_cta' ): ?>
+
+                                        <div class="quote-cta--single">
+                                            <span class="title"><?php the_sub_field('cta_title'); ?></span>
+                                            <a href="#bottom-form" class="btn-cta"><?php the_sub_field('button_label'); ?></a>
+                                        </div>
+                                        <!-- // single  -->                                                    
+
                                     <?php endif; ?>
                                 <?php endwhile; ?>
                             <?php endif; ?>                            
@@ -108,6 +116,26 @@ $container = get_theme_mod( 'understrap_container_type' );
                             </ul>
                         </div>
                         <!-- /.blog-share -->
+
+                        <div id="free-estimate">
+                                <div class="row" id="bottom-form">
+                                    <div class="col-md-12">
+                                        <div class="fit-wrap quote-intro">
+                                            <h4>What are you moving?</h4>
+                                            <div class="quote-form">
+                                                <div class="quote-form-in">
+                                                    <?php echo do_shortcode('[contact-form-7 id="368" title="Quick Estimate"]'); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.fit-wrap -->
+                                    </div>
+                                    <!-- /.col-md-12 -->
+                                </div>
+                                <!-- /.row -->
+                        </div>
+                        <!-- /#free-estimate -->    
+
                         <div class="blog-navigation">
                             <?php $previous = get_previous_post();
                             $next = get_next_post(); ?>
@@ -195,6 +223,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         <!-- /.container -->
     </div>
     <!-- /#blog-page -->   
+
    
 <?php
 get_footer();
