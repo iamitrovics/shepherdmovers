@@ -86,6 +86,9 @@
         .blog-photo {
             overflow: hidden;
             height: 400px;
+            @include media-breakpoint-down(sm) {
+                height: 240px;
+            }
             img {
                 display: block;
                 @include animate-fade;
@@ -99,6 +102,9 @@
                 height: 100%;
                 top: 0;
                 left: 0;
+                @include media-breakpoint-down(sm) {
+                    padding: 0 15px;
+                }
                 &:after {
                     content: '';
                     display: block;

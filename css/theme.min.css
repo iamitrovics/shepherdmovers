@@ -38558,6 +38558,11 @@ body.fixed {
   overflow: hidden;
   height: 400px;
 }
+@media (max-width: 767.98px) {
+  #blogs .blog-item .blog-photo {
+    height: 240px;
+  }
+}
 #blogs .blog-item .blog-photo img {
   display: block;
   -webkit-transition: 0.25s ease-in-out;
@@ -38574,6 +38579,11 @@ body.fixed {
   height: 100%;
   top: 0;
   left: 0;
+}
+@media (max-width: 767.98px) {
+  #blogs .blog-item .blog-photo a {
+    padding: 0 15px;
+  }
 }
 #blogs .blog-item .blog-photo a:after {
   content: "";
