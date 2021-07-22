@@ -68,7 +68,6 @@ $container = get_theme_mod( 'understrap_container_type' );
                                     <?php elseif( get_row_layout() == 'full_width_image' ): ?>
 
                                         <div class="blog-photo">
-                                            <a href="img/misc/blog-detailed2.jpeg">
                                                 <?php
                                                 $imageID = get_sub_field('featured_image');
                                                 $image = wp_get_attachment_image_src( $imageID, 'fullwidth-image' );
@@ -76,7 +75,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                                 ?> 
 
                                                 <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
-                                            </a>
+
                                             <?php if( get_sub_field('image_caption') ): ?>
                                             <div class="photo-caption">
                                                 <span><?php the_sub_field('image_caption'); ?></span>
