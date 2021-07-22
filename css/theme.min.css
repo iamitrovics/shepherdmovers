@@ -38557,6 +38557,7 @@ body.fixed {
 #blogs .blog-item .blog-photo {
   overflow: hidden;
   height: 400px;
+  position: relative;
 }
 @media (max-width: 767.98px) {
   #blogs .blog-item .blog-photo {
@@ -38579,11 +38580,6 @@ body.fixed {
   height: 100%;
   top: 0;
   left: 0;
-}
-@media (max-width: 767.98px) {
-  #blogs .blog-item .blog-photo a {
-    padding: 0 15px;
-  }
 }
 #blogs .blog-item .blog-photo a:after {
   content: "";
