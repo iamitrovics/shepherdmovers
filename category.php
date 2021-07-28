@@ -31,6 +31,7 @@
                                     <div class="col-md-4">
                                         <div class="blog-photo">
                                             <a href="<?php echo get_permalink(); ?>">
+                                            <span><i class="fal fa-long-arrow-right"></i></span>
                                                 <?php 
                                                 $values = get_field( 'featured_image_blog' );
                                                 if ( $values ) { ?>
