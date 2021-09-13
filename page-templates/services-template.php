@@ -47,38 +47,37 @@ get_header();
 					<!-- /.fit-wrap -->
 
 					<div class="about-body">
+						<div class="row service-row">				
+							<?php if( have_rows('services_serv_page') ): ?>
+								<?php while( have_rows('services_serv_page') ): the_row(); ?>
 
-						<?php if( have_rows('services_serv_page') ): ?>
-							<?php while( have_rows('services_serv_page') ): the_row(); ?>
-
-								<div class="row service-row">
 									<div class="col-md-4">
 										<div class="about-photo">
-											<?php
-											$imageID = get_sub_field('featured_image');
-											$image = wp_get_attachment_image_src( $imageID, 'service-image' );
-											$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
-											?> 
+											<a href="<?php the_sub_field('service_link'); ?>">
+												<span><i class="fal fa-long-arrow-right"></i></span>
+												<?php
+												$imageID = get_sub_field('featured_image');
+												$image = wp_get_attachment_image_src( $imageID, 'service-image' );
+												$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+												?> 
 
-											<img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+												<img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+											</a>
 										</div>
 										<!-- /.about-photo -->
-									</div>
-									<!-- /.col-md-5 -->
-									<div class="col-md-8">
+									
+
 										<div class="about-content">
-											<h3><?php the_sub_field('service_name'); ?></h3>
-											<?php the_sub_field('content_block'); ?>
+											<a href="<?php the_sub_field('service_link'); ?>"><h3><?php the_sub_field('service_name'); ?></h3></a>
 										</div>
-										<!-- /.about-content -->
+										<!-- /.about-content -->			
 									</div>
-									<!-- /.col-md-7 -->
-								</div>
-								<!-- /.row -->
+									<!-- /.col-md-4 -->
 
-							<?php endwhile; ?>
-						<?php endif; ?>
-
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+						<!-- /.row service-row -->
 					</div>
 					<!-- /.about-body -->
 				</div>

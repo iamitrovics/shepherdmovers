@@ -106,12 +106,12 @@
         a {
             display: block;
             border-radius: 4px;
-            border: 1px solid #000;
-            color: #000;
+            border: 1px solid $orange;
+            color: $white;
             padding: 9.5px 20px;
             font-size: 13px;
             letter-spacing: .1em;
-            background-color: transparent;
+            background-color: $orange;
             font-family: $pt-bold;
             text-transform: uppercase;
             text-align: center;
@@ -126,6 +126,7 @@
             &:hover {
                 background-color: #000;
                 color: #fff;
+                border: 1px solid $black;
                 @media (max-width: 767px) {
                     background: transparent;
                 }

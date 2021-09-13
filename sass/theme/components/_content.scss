@@ -61,7 +61,7 @@
             content: '';
             width: 20%;
             height: 5px;
-            background-color: #000;
+            background-color: $orange;
             margin-top: 40px;
             margin-bottom: 40px;
         }
@@ -132,7 +132,7 @@ body {
     color: #ccc;
     text-decoration: underline;
     display: inline-block;
-    margin-top: 15px;
+    margin-bottom: 15px;
     position: relative;
     &:hover {
         color: #fff;
@@ -234,6 +234,9 @@ body {
             @include white-btn;
             margin-left: auto;
             margin-right: auto;
+            background-color: $orange;
+            color: white;
+            border: 1px solid $orange;
         }
     }
 }

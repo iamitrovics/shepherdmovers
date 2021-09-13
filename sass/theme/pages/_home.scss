@@ -50,7 +50,7 @@
                     text-align: center;
                     font-size: 28px;
                     color: #fff;
-                    background-color: #000;
+                    background-color: $orange;
                     border-radius: 50%;
                     margin-right: 20px;
                     @include media-breakpoint-only(md) {
@@ -78,6 +78,9 @@
                 text-align: center;
                 a {
                     @include outline-btn;
+                    background-color: $orange;
+                    color: white;
+                    border: 1px solid $orange;
                     @include media-breakpoint-only(md) {
                         padding-left: 15px;
                         padding-right: 15px;
@@ -88,6 +91,7 @@
                     &:hover {
                         background-color: #000;
                         color: #fff;
+                        border: 1px solid $black;
                         i {
                             color: #fff;
                         }

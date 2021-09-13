@@ -38,6 +38,9 @@
                     display: flex;
                     height: 100%;
                     align-items: center;
+                    &:hover {
+                        color: $orange;
+                    }
                 }
             }
         }
@@ -73,7 +76,7 @@
                     bottom: 0;
                     display: block;
                     content: '';
-                    background-color: #000;
+                    background-color: $orange;
                     width: 0;
                     height: 1px;
                     @include animate-fade;

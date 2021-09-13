@@ -36344,6 +36344,9 @@ label.control {
       -ms-flex-align: center;
           align-items: center;
 }
+.mainmenu .navbar-collapse .navbar-nav li a:hover {
+  color: #EE8C21;
+}
 .mainmenu .navbar-nav {
   margin-left: auto;
 }
@@ -36374,7 +36377,7 @@ label.control {
   bottom: 0;
   display: block;
   content: "";
-  background-color: #000;
+  background-color: #EE8C21;
   width: 0;
   height: 1px;
   -webkit-transition: 0.25s ease-in-out;
@@ -36923,12 +36926,12 @@ label.control {
 #menu_area .call-btn a {
   display: block;
   border-radius: 4px;
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid #EE8C21;
+  color: #fff;
   padding: 9.5px 20px;
   font-size: 13px;
   letter-spacing: 0.1em;
-  background-color: transparent;
+  background-color: #EE8C21;
   font-family: "PT Sans Bold";
   text-transform: uppercase;
   text-align: center;
@@ -36946,6 +36949,7 @@ label.control {
 #menu_area .call-btn a:hover {
   background-color: #000;
   color: #fff;
+  border: 1px solid #000;
 }
 @media (max-width: 767px) {
   #menu_area .call-btn a:hover {
@@ -37362,7 +37366,7 @@ label.control {
   content: "";
   width: 20%;
   height: 5px;
-  background-color: #000;
+  background-color: #EE8C21;
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -37440,7 +37444,7 @@ body.fixed {
   color: #ccc;
   text-decoration: underline;
   display: inline-block;
-  margin-top: 15px;
+  margin-bottom: 15px;
   position: relative;
 }
 .zebra_tooltips_below:hover {
@@ -37588,6 +37592,9 @@ body.fixed {
   transition: 0.25s ease-in-out;
   margin-left: auto;
   margin-right: auto;
+  background-color: #EE8C21;
+  color: white;
+  border: 1px solid #EE8C21;
 }
 .quote-form-in input[type=submit]:hover {
   border-color: #fff;
@@ -38259,7 +38266,7 @@ body.fixed {
   text-align: center;
   font-size: 28px;
   color: #fff;
-  background-color: #000;
+  background-color: #EE8C21;
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -38299,6 +38306,9 @@ body.fixed {
   border-radius: 25px;
   letter-spacing: 1.3px;
   color: #000;
+  background-color: #EE8C21;
+  color: white;
+  border: 1px solid #EE8C21;
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   #services-area .services-list .service-item .quote-link a {
@@ -38312,6 +38322,7 @@ body.fixed {
 #services-area .services-list .service-item .quote-link a:hover {
   background-color: #000;
   color: #fff;
+  border: 1px solid #000;
 }
 #services-area .services-list .service-item .quote-link a:hover i {
   color: #fff;
@@ -39410,8 +39421,87 @@ body.fixed {
 #container-sizes .container-table table tr:nth-child(even) {
   background: #f6f6f6;
 }
-.service-row {
-  margin-bottom: 60px;
+.service-row .col-md-4 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.service-row .col-md-4 h3 {
+  font-size: 1.6em !important;
+  margin-top: 15px;
+}
+.service-row .col-md-4 .about-photo {
+  overflow: hidden;
+  height: 250px;
+  position: relative;
+}
+@media (max-width: 767.98px) {
+  .service-row .col-md-4 .about-photo {
+    height: 240px;
+  }
+}
+.service-row .col-md-4 .about-photo img {
+  display: block;
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+.service-row .col-md-4 .about-photo a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.service-row .col-md-4 .about-photo a:after {
+  content: "";
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  z-index: 1;
+}
+.service-row .col-md-4 .about-photo a:hover span {
+  opacity: 1;
+  margin-top: 0;
+}
+.service-row .col-md-4 .about-photo a:hover:after {
+  opacity: 1;
+}
+.service-row .col-md-4 .about-photo a span {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  text-align: center;
+  line-height: 64px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: block;
+  color: #000;
+  font-size: 24px;
+  margin-top: 20px;
+  opacity: 0;
+  z-index: 2;
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 #free-estimate {
@@ -39469,9 +39559,6 @@ body.fixed {
 }
 #free-estimate .quote-form form .zebra_tooltips_below:hover {
   color: #000;
-}
-#free-estimate .quote-form form input[type=submit] {
-  border-color: #000 !important;
 }
 #free-estimate .quote-form form input[type=submit]:hover {
   background-color: #000;
