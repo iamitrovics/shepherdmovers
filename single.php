@@ -31,10 +31,14 @@ $container = get_theme_mod( 'understrap_container_type' );
                             </div>
                             <!-- /.blog-meta -->
                             <h1><?php the_title(); ?></h1>
-                            <span class="blog-author">
-                            By <?php the_author(); ?>
-                            </span>
-                            <!-- /.blog-author -->
+                            <div class="author-desc">
+                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
+                                <div class="author-content">
+                                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
+                                    <p><?php the_author_description(); ?></p>
+                                </div>
+                                <!-- /.author-content -->
+                            </div> 
                         </div>
                         <!-- /.blog-headline -->
                         <div class="blog-content">
