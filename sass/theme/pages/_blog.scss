@@ -436,6 +436,24 @@
             height:450px;
         }
     }
+    .single-table {
+        margin-bottom: 30px;
+        @include media-breakpoint-down(sm) {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        th {
+            border: 1px solid #000;
+            background: $orange;
+            color: #fff;
+            padding: 3px 10px;
+        }
+        td {
+            border: 1px solid;
+            padding: 3px 10px;
+        }
+    }
     .blog-body {
         max-width: 733px;
         margin-left: auto;

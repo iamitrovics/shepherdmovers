@@ -39006,6 +39006,26 @@ body.fixed {
   margin: 0px auto;
   height: 450px;
 }
+#blog-page .single-table {
+  margin-bottom: 30px;
+}
+@media (max-width: 767.98px) {
+  #blog-page .single-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+#blog-page .single-table th {
+  border: 1px solid #000;
+  background: #EE8C21;
+  color: #fff;
+  padding: 3px 10px;
+}
+#blog-page .single-table td {
+  border: 1px solid;
+  padding: 3px 10px;
+}
 #blog-page .blog-body {
   max-width: 733px;
   margin-left: auto;
