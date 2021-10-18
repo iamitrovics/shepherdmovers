@@ -1,0 +1,327 @@
+<?php
+/*
+ * Template Name: Parent Child Template
+ * Template Post Type: post
+ */
+  
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+get_header();
+$container = get_theme_mod( 'understrap_container_type' );
+?>
+
+
+    <div id="blog-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="blog-body">
+                        <div class="blog-headline">
+                            <div class="blog-meta">
+                                <span>
+                                    <?php
+                                    global $post;
+                                    $categories = get_the_category($post->ID);
+                                    $cat_link = get_category_link($categories[0]->cat_ID);
+                                    echo '<a href="'.$cat_link.'">'.$categories[0]->cat_name.'</a>' 
+                                    ?>                                  
+                                </span> 
+                                <span><?php echo get_the_date( 'F j, Y' ); ?></span>
+                            </div>
+                            <!-- /.blog-meta -->
+                            <h1><?php the_title(); ?></h1>
+                            <div class="author-desc">
+                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
+                                <div class="author-content">
+                                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
+                                    <p><?php the_author_description(); ?></p>
+                                </div>
+                                <!-- /.author-content -->
+                            </div> 
+                        </div>
+                        <!-- /.blog-headline -->
+                        <div class="blog-content">
+
+                            <div class="featured-photo">
+                                <?php
+                                $imageID = get_field('featured_image_blog');
+                                $image = wp_get_attachment_image_src( $imageID, 'full-image' );
+                                $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                ?> 
+
+                                <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                            </div>
+                            <!-- /.featured-photo -->
+
+                            <?php if( have_rows('list_of_posts_parent') ): ?>
+                            <div id="post-nav">
+                                <div class="post-wrapper">                           
+                                        
+                                    <?php while( have_rows('list_of_posts_parent') ): the_row(); ?>
+
+                                        <div class="item">
+                                            <div class="nav-col">
+                                                <a href="<?php the_sub_field('link_to_post'); ?>">
+                                                    <div class="icon">
+                                                        <img src="<?php the_sub_field('icon'); ?>" alt="">
+                                                    </div>
+                                                    <span><?php the_sub_field('label'); ?></span>
+                                                </a>
+                                            </div>
+                                            <!-- // col  -->
+                                        </div>
+
+                                    <?php endwhile; ?>
+                                        
+                                </div>
+                                <!-- // wrapper  -->
+                            </div>
+                            <!-- // post nav  -->
+                            <?php endif; ?>                             
+
+                            <?php if( have_rows('content_layout_blog') ): ?>
+                                <?php while( have_rows('content_layout_blog') ): the_row(); ?>
+                                    <?php if( get_row_layout() == 'intro_text' ): ?>
+
+                                        <div class="intro-text">
+                                            <?php the_sub_field('intro_content'); ?>
+                                        </div>
+
+                                    <?php elseif( get_row_layout() == 'full_width_content' ): ?>
+
+                                        <div class="full-content">
+                                            <?php the_sub_field('content_block'); ?>
+                                        </div>
+                                        <!-- // full  -->
+
+                                    <?php elseif( get_row_layout() == 'full_width_image' ): ?>
+
+                                        <div class="blog-photo">
+                                                <?php
+                                                $imageID = get_sub_field('featured_image');
+                                                $image = wp_get_attachment_image_src( $imageID, 'fullwidth-image' );
+                                                $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                                ?> 
+
+                                                <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+
+                                            <?php if( get_sub_field('image_caption') ): ?>
+                                            <div class="photo-caption">
+                                                <span><?php the_sub_field('image_caption'); ?></span>
+                                            </div>
+                                            <?php endif; ?>
+                                        </div>
+                                        <!-- /.blog-photo -->   
+                                        
+                                    <?php elseif( get_row_layout() == 'video' ): ?>
+
+                                        <div class="video-holder">
+                                            <?php the_sub_field('embedded_code'); ?>
+                                        </div>
+
+                                    <?php elseif( get_row_layout() == 'quote_cta' ): ?>
+
+                                        <div class="quote-cta--single">
+                                            <span class="title"><?php the_sub_field('cta_title'); ?></span>
+                                            <a href="#bottom-form" class="btn-cta"><?php the_sub_field('button_label'); ?></a>
+                                        </div>
+                                        <!-- // single  -->  
+                                        
+                                    <?php elseif( get_row_layout() == 'table' ): ?>
+
+                                        <table style="width:100%" class="single-table">
+                                            <thead>
+                                                <tr role="row">
+
+                                                <?php
+
+                                                    // check if the repeater field has rows of data
+                                                    if(have_rows('table_head_cells')):
+
+                                                        // loop through the rows of data
+                                                        while(have_rows('table_head_cells')) : the_row();
+
+                                                            $hlabel = get_sub_field('table_cell_label_thead');
+
+                                                            ?>  
+
+                                                            <th tabindex="0" rowspan="1" colspan="1"><?php echo $hlabel; ?></th>
+
+                                                        <?php endwhile;
+
+                                                    else :
+                                                        echo 'No data';
+                                                    endif;
+                                                    ?>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            <?php while ( have_posts() ) : the_post(); ?>
+
+                                                <?php 
+
+                                                // check for rows (parent repeater)
+                                                if( have_rows('table_body_row') ): ?>
+                                                    
+                                                    <?php 
+
+                                                    // loop through rows (parent repeater)
+                                                    while( have_rows('table_body_row') ): the_row(); ?>
+
+                                                            <?php 
+
+                                                            // check for rows (sub repeater)
+                                                            if( have_rows('table_body_cells') ): ?>
+                                                                <tr>
+                                                                    <?php 
+
+                                                                    // loop through rows (sub repeater)
+                                                                    while( have_rows('table_body_cells') ): the_row();
+
+                                                                        
+                                                                        ?>
+                                                                        <td><?php the_sub_field('table_cell_label_tbody'); ?></td>
+                                                                    <?php endwhile; ?>
+                                                                </tr>
+                                                            <?php endif; //if( get_sub_field('') ): ?>
+
+                                                    <?php endwhile; // while( has_sub_field('') ): ?>
+                                                        
+                                                <?php endif; // if( get_field('') ): ?>
+
+                                                <?php endwhile; // end of the loop. ?>
+                                                
+                                            </tbody>
+                                        </table> 
+
+                                    <?php endif; ?>
+                                <?php endwhile; ?>
+                            <?php endif; ?>                            
+
+                        </div>
+                        <!-- /.blog-content -->
+                        <div class="blog-share">
+                            <ul>
+                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-yelp"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#" target="_blank"> <i class="fab fa-tumblr"></i></a></li>
+
+                            </ul>
+                        </div>
+                        <!-- /.blog-share -->
+
+                        <div id="free-estimate">
+                                <div class="row" id="bottom-form">
+                                    <div class="col-md-12">
+                                        <div class="fit-wrap quote-intro">
+                                            <h4>What are you moving?</h4>
+                                            <div class="quote-form">
+                                                <div class="quote-form-in">
+                                                    <?php echo do_shortcode('[contact-form-7 id="368" title="Quick Estimate"]'); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.fit-wrap -->
+                                    </div>
+                                    <!-- /.col-md-12 -->
+                                </div>
+                                <!-- /.row -->
+                        </div>
+                        <!-- /#free-estimate -->    
+
+                        <div class="blog-navigation">
+                            <?php $previous = get_previous_post();
+                            $next = get_next_post(); ?>
+                            <div class="previous blog-nav-item">
+                                    <small>
+                                    <div class="blog-nav-content">
+                                        <?php if (strlen(get_previous_post()->post_title) > 0) { ?>
+                                        <span class="direction">Previous</span>
+                                        <?php } ?>
+                                        <span class="title"><?php previous_post_link('%link'); ?></span>
+                                    </div>
+                                    <!-- /.blog-nav-content -->
+                                </small>
+                            </div>
+                            <!-- /.previous blog-nav-item -->  
+                            <div class="next blog-nav-item">
+                                <small>
+                                    <div class="blog-nav-content">
+                                        <?php if (strlen(get_next_post()->post_title) > 0) { ?>
+                                        <span class="direction">Next</span>
+                                        <?php } ?>
+                                        <span class="title"><?php next_post_link('%link'); ?></span>
+                                    </div>
+                                    <!-- /.blog-nav-content -->
+                                </small>
+                            </div>
+                            <!-- /.next blog-nav-item -->  
+                        </div>
+                        <!-- /.blog-navigation -->
+                        <div class="related-posts">
+                            <span class="related-posts-title">Realted posts</span>
+                            <!-- /.related-posts-title -->
+                            <div class="row">
+
+                                <?php $orig_post = $post;
+                                global $post;
+                                $categories = get_the_category($post->ID);
+                                if ($categories) {
+                                $category_ids = array();
+                                foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+
+                                $args=array(
+                                'category__in' => $category_ids,
+                                'post__not_in' => array($post->ID),
+                                'posts_per_page'=> 4, // Number of related posts that will be shown.
+                                'ignore_sticky_posts'=>1
+                                );
+
+                                $my_query = new wp_query( $args );
+                                if( $my_query->have_posts() ) {
+                                while( $my_query->have_posts() ) {
+                                $my_query->the_post();?>
+
+                                    <div class="col-md-3">
+                                        <div class="related-box">
+                                            <a href="<?php echo get_permalink(); ?>">
+                                                <h4><?php the_title(); ?></h4>
+                                                <span class="date"><?php echo get_the_date( 'F j, Y' ); ?></span>
+                                                <!-- /.date -->
+                                            </a>
+                                        </div>
+                                        <!-- /.related-box -->
+                                    </div>
+                                    <!-- /.col-md-3 -->
+
+                                <?
+                                }
+                                echo '</ul></div>';
+                                }
+                                }
+                                $post = $orig_post;
+                                wp_reset_query(); ?>
+
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.related-posts -->
+                    </div>
+                    <!-- /.blog-body -->
+                </div>
+                <!-- /.col-md-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /#blog-page -->   
+
+   
+<?php
+get_footer();

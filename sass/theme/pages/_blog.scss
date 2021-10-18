@@ -455,13 +455,24 @@
         }
     }
     .blog-body {
-        max-width: 733px;
+        max-width: 940px;
         margin-left: auto;
         margin-right: auto;
         width: 100%;
         margin-bottom: 60px;
+        @include media-breakpoint-only(md) {
+            max-width: 740px;
+        }
         @include media-breakpoint-down(sm) {
             margin-bottom: 30px;
+        }
+        p {
+            a {
+                color:$orange;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
 
         #free-estimate {
@@ -760,5 +771,81 @@
         @include media-breakpoint-down(md) {
             margin:0px auto;
         }
+    }
+}
+
+#post-nav {
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border:1px solid #000;
+    .post-wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .item {
+            width: 20%;
+            margin-bottom: 30px;
+            @include media-breakpoint-down(md) {
+                width: 50%;
+            }    
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+                &.active {
+                    background:#3c8741;
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
+                    span {
+                        color:$white!important;
+                    }
+                }
+            }        
+            .nav-col {
+                text-align: center;
+                height: 100%;
+                &:hover {
+                    span {
+                        color:$orange;
+                    }
+                    .icon {
+                        background: #000;
+                    }
+                }
+                .icon {
+                    margin:0px auto;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    margin-bottom: 20px;
+                    background: #EE8C21;
+                    @include animate-fade;
+                    img {
+                        @include centre(both);
+                        filter: brightness(0) invert(1);
+                        width: 32px;
+                    }                
+                }
+                span {
+                    display: block;
+                    font-family: $pt-bold;
+                    font-size: 15px;
+                    line-height: 1.3;
+                    color: #404040;
+                    margin-bottom: 10px;
+                    @include animate-fade;
+                    @include media-breakpoint-down(md) {
+                        font-size: 1em;
+                    }                    
+                }
+            }
+        }        
     }
 }
