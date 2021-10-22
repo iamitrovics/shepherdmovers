@@ -39405,7 +39405,7 @@ body.fixed {
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
   width: 230px;
-  background-color: #EE8C21;
+  background-color: #EE8C21 !important;
   border: 1px solid #EE8C21;
 }
 .featured-article .blog-item .blog-content a.btn-cta:hover {

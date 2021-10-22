@@ -798,7 +798,7 @@
             a.btn-cta {
                 @include white-btn;
                 width: 230px;
-                background-color: $orange;
+                background-color: $orange !important;
                 border: 1px solid $orange;
                 &:hover {
                     border: 1px solid $orange !important;
