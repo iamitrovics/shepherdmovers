@@ -39405,8 +39405,8 @@ body.fixed {
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
   width: 230px;
-  background-color: #ffc107;
-  border: 1px solid #ffc107;
+  background-color: #EE8C21;
+  border: 1px solid #EE8C21;
 }
 .featured-article .blog-item .blog-content a.btn-cta:hover {
   border-color: #fff;
@@ -39414,7 +39414,7 @@ body.fixed {
   color: #fff;
 }
 .featured-article .blog-item .blog-content a.btn-cta:hover {
-  border: 1px solid #ffc107 !important;
+  border: 1px solid #EE8C21 !important;
 }
 @media (max-width: 991.98px) {
   .featured-article .blog-item .blog-content a.btn-cta {
@@ -39476,8 +39476,8 @@ body.fixed {
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
   width: 230px;
-  background-color: #ffc107;
-  border: 1px solid #ffc107;
+  background-color: #EE8C21 !important;
+  border: 1px solid #EE8C21;
 }
 .quote-cta--single a.btn-cta:hover {
   border-color: #fff;
@@ -39485,7 +39485,7 @@ body.fixed {
   color: #fff;
 }
 .quote-cta--single a.btn-cta:hover {
-  border: 1px solid #ffc107 !important;
+  border: 1px solid #EE8C21 !important;
 }
 @media (max-width: 991.98px) {
   .quote-cta--single a.btn-cta {

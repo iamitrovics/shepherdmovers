@@ -798,10 +798,10 @@
             a.btn-cta {
                 @include white-btn;
                 width: 230px;
-                background-color: $yellow;
-                border: 1px solid $yellow;
+                background-color: $orange;
+                border: 1px solid $orange;
                 &:hover {
-                    border: 1px solid $yellow !important;
+                    border: 1px solid $orange !important;
                 }
                 @include media-breakpoint-down(md) {
                     margin:0px auto;
@@ -841,10 +841,10 @@
     a.btn-cta {
         @include white-btn;
         width: 230px;
-        background-color: $yellow;
-        border: 1px solid $yellow;
+        background-color: $orange !important;
+        border: 1px solid $orange;
         &:hover {
-            border: 1px solid $yellow !important;
+            border: 1px solid $orange !important;
         }
         @include media-breakpoint-down(md) {
             margin:0px auto;
