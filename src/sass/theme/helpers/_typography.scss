@@ -1,0 +1,229 @@
+// Import fonts and fonts variables
+
+@font-face {
+    font-family: 'Libre Baskerville Bold';
+    src: url('../fonts/LibreBaskerville-Bold.woff2') format('woff2'),
+        url('../fonts/LibreBaskerville-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville Regular';
+    src: url('../fonts/LibreBaskerville-Regular.woff2') format('woff2'),
+        url('../fonts/LibreBaskerville-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans Bold';
+    src: url('../fonts/PTSans-Bold.woff2') format('woff2'),
+        url('../fonts/PTSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans Regular';
+    src: url('../fonts/PTSans-Regular.woff2') format('woff2'),
+        url('../fonts/PTSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans Italic';
+    src: url('../fonts/PTSans-Italic.woff2') format('woff2'),
+        url('../fonts/PTSans-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+$libre-bold: 'Libre Baskerville Bold';
+$libre-reg: 'Libre Baskerville Regular';
+$pt-bold: 'PT Sans Bold';
+$pt-reg: 'PT Sans Regular';
+$pt-italic: 'PT Sans Italic';
+
+$font-main: 'PT Sans Regular';
+$font-heading: 'Libre Baskerville Regular';
+
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?xl1va3');
+    src:  url('../fonts/icomoon.eot?xl1va3#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?xl1va3') format('truetype'),
+      url('../fonts/icomoon.woff?xl1va3') format('woff'),
+      url('../fonts/icomoon.svg?xl1va3#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-phone-alt:before, .fa-phone-alt:before {
+    content: "\e90a";
+  }
+  .icon-envelope:before, .fa-envelope:before {
+    content: "\e900";
+  }
+  .icon-instagram:before, .fa-instagram:before {
+    content: "\e901";
+  }
+  .icon-youtube:before, .fa-youtube:before {
+    content: "\e902";
+  }
+  .icon-yelp:before, .fa-yelp:before{
+    content: "\e903";
+  }
+  .icon-twitter:before, .fa-twitter:before {
+    content: "\e904";
+  }
+  .icon-facebook-f:before, .fa-facebook-f:before {
+    content: "\e905";
+  }
+  .icon-long-arrow-right:before, .fa-long-arrow-right:before {
+    content: "\e906";
+  }
+  .icon-angle-left:before {
+    content: "\e907";
+  }
+  .icon-angle-right:before {
+    content: "\e908";
+  }
+  .icon-angle-down:before {
+    content: "\e909";
+  }
+  
+
+
+body { 
+	font: {
+		size:$base-size;
+		family: $font-main;
+	}
+	-webkit-text-size-adjust: 100%;  //fix for iOS 
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    margin: 0;
+}
+
+p {
+    font-family: $font-main;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 20px;
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+// reset
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.fa, .fab, .fas, .fal {
+    font-family: 'icomoon';
+}
+
+ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.h1, h1 {
+    font-size: 2.5rem;
+}
+
+.h2, h2 {
+    font-size: 2rem;
+}
+
+.h3, h3 {
+    font-size: 1.75rem;
+}
+
+.h4, h4 {
+    font-size: 1.5rem;
+}
+
+// reset
+a {
+    @include animate-fade;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a, button, input, textarea {
+    &:focus {
+        outline: none!important;
+    }
+}
+
+button, input[type="submit"] {
+    @include animate-fade;
+    cursor: pointer;
+}
+
+address {
+    margin:0px;
+    padding:0px;
+}
+iframe {
+    border:0;
+}
+
+i {
+    font-style: normal;
+}
+
+#secondary img, article img, figure, img, img.wp-post-image {
+    max-width: 100%;
+    height: auto;
+}

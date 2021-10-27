@@ -106,25 +106,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div>
 	<!-- /#cookie-notice -->
 	<?php else: ?>
-	<?php endif; ?>
+	<?php endif; ?>	
 
-	<!-- Modal -->
-	<div class="modal fade" id="tooltip-modal" tabindex="-1" role="dialog" aria-labelledby="tooltip-modalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-			<div class="modal-content">
-			<div class="modal-body">
-			
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true"><i class="fal fa-times"></i></span>
-				</button>
-
-				<?php the_field('tooltip_content_modal', 'options'); ?>
-
+	<div class="modal-overlay disclaimer-modal" data-my-element="tooltip-modal">
+		<div class="modal" data-my-element="tooltip-modal">
+			<a class="close-modal">
+				<img src="<?php bloginfo('template_directory'); ?>/img/ico/close.svg" alt="">
+			</a>
+			<!-- close modal -->
+			<div class="disclaimer-modal-wrap">
+					<?php the_field('tooltip_content_modal', 'options'); ?>
 			</div>
-			<!-- // body  -->
-			</div>
+			<!-- /.disclaimer-modal-wrap -->
 		</div>
-	</div>		
+		<!-- modal -->
+	</div>	
 
 	<?php wp_footer(); ?>
 
