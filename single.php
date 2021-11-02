@@ -147,6 +147,41 @@ $container = get_theme_mod( 'understrap_container_type' );
                                             <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
                                         <?php endif; ?>
                                         <?php wp_reset_postdata(); ?>
+
+                                    <?php elseif( get_row_layout() == 'services_module' ): ?>
+
+                                        <section id="services-area" class="services-blog-module">
+                                            <div class="services-list">
+                                                <div class="row">
+
+                                                    <?php
+                                                        $post_objects = get_sub_field('services_list_blog_page');
+
+                                                        if( $post_objects ): ?>
+                                                            <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+                                                                <?php setup_postdata($post); ?>
+                                                                
+                                                                <div class="col-md-4">
+                                                                    <a href="<?php echo get_permalink(); ?>" target="_blank">
+                                                                        <div class="service-item">
+                                                                            <h3><?php the_field('icon_serv'); ?> <?php the_title(); ?></h3>
+                                                                            <i class="details-link">Details</i>
+                                                                        </div>
+                                                                        <!-- /.service-item -->
+                                                                    </a>
+                                                                </div>
+                                                                <!-- /.col-md-4 -->
+
+                                                            <?php endforeach; ?>
+                                                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                                                    <?php endif; ?>
+
+                                                </div>
+                                                <!-- /.row -->
+                                            </div>
+                                            <!-- /.services-list -->
+                                        </section>
+                                        <!-- /#services-area -->
                                         
                                     <?php elseif( get_row_layout() == 'table' ): ?>
 
