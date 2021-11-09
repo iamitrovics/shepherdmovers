@@ -120,6 +120,30 @@ $container = get_theme_mod( 'understrap_container_type' );
                                             <?php the_sub_field('embedded_code'); ?>
                                         </div>
 
+                                    <?php elseif( get_row_layout() == 'accordion' ): ?>				
+
+                                        <div class="accordion-section">
+                                            <?php if( get_sub_field('accordion_title') ): ?>
+                                                <h3><?php the_sub_field('accordion_title'); ?></h3>
+                                            <?php endif; ?>
+                                            <div class="accordion-list">
+                                            <?php if( have_rows('accordion_list') ): ?>
+                                                <?php while( have_rows('accordion_list') ): the_row(); ?>
+
+                                                    <div class="panel">
+                                                        <h4><?php the_sub_field('heading'); ?></h4>
+                                                        <div class="panel__content">
+                                                            <?php the_sub_field('content'); ?>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.panel -->
+                                                <?php endwhile; ?>
+                                            <?php endif; ?>
+                                            </div>
+                                            <!-- // acc  -->
+                                        </div>
+                                        <!-- // section  -->
+
                                     <?php elseif( get_row_layout() == 'quote_cta' ): ?>
 
                                         <div class="quote-cta--single">

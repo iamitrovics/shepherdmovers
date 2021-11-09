@@ -436,6 +436,66 @@
             height:450px;
         }
     }
+    .accordion-section {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        .panel > div {
+            display: none;
+            padding: 15px;
+            padding-top: 10px;
+        }
+        h4 {
+            position: relative;
+            border: 1px solid $orange;
+            margin-bottom: 5px;
+            margin-top: 0;
+            background: #fff;
+            padding: 16px 65px;
+            padding-left: 20px;
+            font-size: 1.1em;
+            color: $orange!important;
+            @include bp(sm-down) {
+                font-size: 18px;
+                padding: 16px 40px;
+                padding-left: 20px;
+            }
+            &:after {
+                content: "+";
+                @include centre(y);
+                right: 30px;
+                font-size: 40px;
+                font-weight: 300;
+                color: $orange;
+                @include animate-fade;
+                @include bp(desktop) {
+                    font-size: 40px;
+                }
+                @include bp(md) {
+                    font-size: 35px;
+                    right: 15px;
+                }
+                @include bp(sm-down) {
+                    font-size: 30px;
+                    right: 15px;
+                }
+            }
+            &:focus {
+                outline: none!important;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            &.active {
+                &:after {
+                    -webkit-transform: translateY(-50%)  rotate(45deg);
+                    -moz-transform: translateY(-50%)  rotate(45deg);
+                    -ms-transform: translateY(-50%)  rotate(45deg);
+                    -o-transform: translateY(-50%)  rotate(45deg);
+                    transform: translateY(-50%)  rotate(45deg);
+                }
+            } 
+        }
+    }
     .single-table {
         margin-bottom: 30px;
         @include bp(sm-down) {
@@ -623,14 +683,14 @@
                 float: left;
                 text-align: left;
                 a {
-                    color:$red;
+                    color:$orange;
                 }
             }
             &.next {
                 float: right;
                 text-align: right;
                 a {
-                    color:$red;
+                    color:$orange;
                 }
                 @include bp(sm-down){
                     margin-top: 40px;

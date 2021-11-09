@@ -5265,6 +5265,21 @@ if (typeof jQuery === 'undefined') {
         scrollTop: $($.attr(this, 'href')).offset().top - 80
       }, 500);
     });
+    $(".accordion-list .panel:first-of-type > h4").addClass('active');
+    $(".accordion-list .panel:first-of-type > .panel__content").css('display', 'block');
+    $(".accordion-list .panel > h4").on("click", function (e) {
+      if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(this).siblings(".accordion-list .panel .panel__content").slideUp(200);
+      } else {
+        $(".accordion-list .panel > h4").removeClass("active");
+        $(this).addClass("active");
+        $(".accordion-list .panel .panel__content").slideUp(200);
+        $(this).siblings(".accordion-list .panel .panel__content").slideDown(200);
+      }
+
+      e.preventDefault();
+    });
     $('#cookie-notice').addClass('slide-up');
     $('#close-notice, #accept-cookie').click(function (e) {
       e.preventDefault();
