@@ -194,7 +194,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                             <?php 
                                             $values = get_field( 'phone_number_top_cta' );
                                             if ( $values ) { ?>
-                                                <a href="tel:<?php the_field('main_phone_number_top_gen', 'options'); ?>"><i class="fas fa-phone-alt"></i> <?php the_field('phone_number_top_cta'); ?></a>
+                                                <a href="tel:<?php the_field('phone_number_top_cta'); ?>"><i class="fas fa-phone-alt"></i> <?php the_field('phone_number_top_cta'); ?></a>
                                             <?php 
                                             } else { ?>
                                                 <a href="tel:<?php the_field('main_phone_number_top_gen', 'options'); ?>"><i class="fas fa-phone-alt"></i> <?php the_field('main_phone_number_top_gen', 'options'); ?></a>

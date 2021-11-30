@@ -122,6 +122,25 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<!-- modal -->
 	</div>	
 
+	<?php 
+	$values = get_field( 'phone_number_top_cta' );
+	if ( $values ) { ?>
+
+		<div id="fixed-cta">
+			<a href="tel:<?php the_field('phone_number_top_cta') ?>"><small><img src="<?php bloginfo('template_directory'); ?>/img/ico/phone-solid.svg" alt=""></small><span>Call: </span> <strong><?php the_field('phone_number_top_cta') ?></strong></a>
+		</div>
+		<!-- // fixed cta  -->
+
+	<?php 
+	} else { ?>
+		
+		<div id="fixed-cta">
+			<a href="tel:<?php the_field('main_phone_number_top_gen', 'options') ?>"><small><img src="<?php bloginfo('template_directory'); ?>/img/ico/phone-solid.svg" alt=""></small><span>Call: </span> <strong><?php the_field('main_phone_number_top_gen', 'options') ?></strong></a>
+		</div>
+		<!-- // fixed cta  -->		
+
+	<?php } ?>	
+
 	<?php wp_footer(); ?>
 
 	<?php if( get_field('footer_code_snippet', 'options') ): ?>

@@ -1,6 +1,6 @@
 {
 	"browserSyncOptions": {
-		"proxy": "http://localhost/shepherd2/",
+		"proxy": "http://localhost:81/morph/shepherdmovers/wpnew/",
 		"notify": false,
 		"files": ["./css/*.min.css", "./js/*.min.js", "./**/*.php"]
 	},
