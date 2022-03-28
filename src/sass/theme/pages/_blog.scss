@@ -384,8 +384,8 @@
         margin-bottom: 30px;
         li {
             strong {
-                font-family: inherit;
-                font-weight: 400;
+                font-weight: bold;
+                font-family: $libre-bold;
             }
             a {
                 color: #0278FA;
@@ -983,4 +983,9 @@
             }
         }        
     }
+}
+
+#blog-page ul li strong {
+    font-weight: bold!important;
+    font-family: $libre-bold!important;
 }
