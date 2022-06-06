@@ -48,6 +48,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 			array(
 				'primary' => __( 'Primary Menu', 'understrap' ),
 				'footer' => __( 'Footer Menu', 'understrap' ),
+				'mobile' => __( 'Mobile Menu', 'understrap' ),
 			)
 		);
 

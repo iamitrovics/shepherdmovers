@@ -17,7 +17,7 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		$the_theme     = wp_get_theme();
 		$theme_version = $the_theme->get( 'Version' );
 
-		wp_enqueue_style( 'understrap-styles', get_template_directory_uri() . '/css/theme.min.css', array() );
+		wp_enqueue_style( 'understrap-styles', get_template_directory_uri() . '/css/theme.min.css', array(), '1.2' );
 
 		wp_enqueue_script( 'jquery' );
 

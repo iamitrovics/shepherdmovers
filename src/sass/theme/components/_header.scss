@@ -130,6 +130,7 @@
         margin-left: 20px;
         @media (max-width: 1199px) {
             margin-left: auto;
+            margin-right: 65px;
         }
         a {
             display: block;
@@ -414,4 +415,34 @@
             }
         }
     }
+}
+
+// mobile
+#mobile-menu--btn {
+    @include centre(y);
+    width: 35px;
+    right: 0px;
+    display: none;
+    @include bp(md-down) {
+        display: block;
+    }
+    a {
+        display: block;
+        width: 100%;
+        height: auto;
+        span {
+            height: 3px;
+            border-radius:6px;
+            background-color:$black;
+            width: 100%;
+            display: block;
+            float: right;
+            @include animate-fade;
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }	
+    }
+    .clearfix {
+        clear: both;
+    }       
 }

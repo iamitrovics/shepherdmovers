@@ -63,7 +63,6 @@ get_header();
 									?> 
 
 									<img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 								
-									<img src="img/misc/about.jpg" alt="">
 									<span class="photo-caption"><?php the_field('caption_about_page'); ?></span>
 									<!-- /.photo-caption -->
 								</div>
