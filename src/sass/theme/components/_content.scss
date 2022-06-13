@@ -390,6 +390,7 @@ body {
     bottom: 0;
     padding: 0px 15px;
     width: 100%;
+    display: none;
     &.slide-up {
         -webkit-animation-name: slideInUp;
         animation-name: slideInUp;
@@ -397,6 +398,7 @@ body {
         animation-duration: 1s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
+        display: block!important;
     }
     &.slide-down {
         -webkit-animation-name: slideOutDown;
@@ -405,6 +407,7 @@ body {
         animation-duration: 1s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
+        opacity: 0;
     }
     &-in {
         padding: 10px 30px;

@@ -147,6 +147,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php the_field('footer_code_snippet', 'options'); ?>
 	<?php endif; ?>
 
+  <script>
+    if (!sessionStorage.alreadyClicked) {
+        jQuery('#cookie-notice').addClass('slide-up');
+        sessionStorage.alreadyClicked = 1;
+    }
+  </script> 		
+
 </body>
 </html>
 
