@@ -1,10 +1,6 @@
 (function ($) {
     jQuery(document).ready(function () {
-        setTimeout(function () {
-            $(".page-wrapper").css({
-                "padding-top": $("#menu_area").height()
-            });
-        }, 600);
+
         // Sticky header
         jQuery(window).scroll(function () {
             if ($(this).scrollTop() > 60) {
