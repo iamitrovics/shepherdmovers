@@ -990,3 +990,54 @@
     font-weight: bold!important;
     font-family: $libre-bold!important;
 }
+
+.blog-filters {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    @include bp(sm-down) {
+        margin-top: 30px;
+    }
+    ul {
+        @include bp(sm-down) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-bottom: 15px;
+            @include bp(sm-down) {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                width: 50%;
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+            a {
+                display: block;
+                color: #fff;
+                border-radius: 8px;
+                background-color:$black;
+                padding: 3px 32px;
+                padding-top: 5px;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 18px;
+                &.active, &:hover {
+                    background-color: $orange;
+                }
+                @include bp(sm-down) {
+                    font-size: 0.7em;
+                }
+            }
+            &.current-cat {
+               a {
+                    background-color: $orange;
+               }
+            }
+        }
+    }
+}
