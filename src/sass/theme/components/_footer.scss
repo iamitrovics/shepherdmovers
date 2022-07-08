@@ -194,6 +194,7 @@
             padding-left: 0px;
             padding:10px;
             height: auto;
+            animation: none!important;
         }
         span {
             @include bp(sm-down) {
