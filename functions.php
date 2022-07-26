@@ -177,7 +177,7 @@ if (current_user_can('manage_options')) {
 			esc_attr( $user->user_nicename ),
 			esc_html__( 'Must be unique.' )
 		);
-		echo preg_replace( $regex, '\0' . $nicename_row, $content );
+		echo preg_replace( $regex, '\0' . $nicename_row, $content);
 	}
 	add_action( 'show_user_profile', 'lwp_2629_insert_nicename_input' );
 	add_action( 'edit_user_profile', 'lwp_2629_insert_nicename_input' );
